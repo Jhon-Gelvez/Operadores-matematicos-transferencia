@@ -1,23 +1,21 @@
-// Definir las constantes
-const transporte = 120000;
-const alojamiento = 200000;
-const alimentacion = 150000;
-const personas = 4;
+// Constantes
+const TRANSPORTE = 120000;
+const ALOJAMIENTO = 200000;
+const ALIMENTACION = 150000;
+const PERSONAS = 4;
 
-// Definir variables
-let total = 0;
-let aporteIndividual = 130000;
-let sobrante = 0;
-let cobroPersonal = 0;
+// Variables
+let total = TRANSPORTE + ALOJAMIENTO + ALIMENTACION;
+let porPersona = total / PERSONAS;
 
-// Cálculos lógicos
-total = transporte + alojamiento + alimentacion;
-cobroPersonal = total / personas;
-sobrante = aporteIndividual - cobroPersonal;
+// Cada persona entrega dinero
+let aporte = parseInt(prompt("Cada persona entrega cuánto dinero? (ej: 130000)"));
 
-// Mostrar resultados al usuario
-alert("Resumen de la Calculadora de Gastos:\n" +
-      "\n1. Gasto total del grupo: $" + total +
-      "\n2. Valor que corresponde a cada uno: $" + cobroPersonal +
-      "\n3. Cada persona entregó: $" + aporteIndividual +
-      "\n\nDinero sobrante para cada integrante: $" + sobrante);
+let totalRecaudado = aporte * PERSONAS;
+let sobrante = totalRecaudado - total;
+
+// Mostrar resultados
+alert("Total del viaje: $" + total + "\n" +
+      "Cada persona debe pagar: $" + porPersona + "\n" +
+      "Total recaudado: $" + totalRecaudado + "\n" +
+      "Sobrante: $" + sobrante);
